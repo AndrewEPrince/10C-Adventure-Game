@@ -89,8 +89,8 @@ __**Note:**__ extra credit options with more in them (e.g. **5 more points**)  a
 
 (**5 more points**) Allow Mobiles to pick up and drop objects as they move through the rooms. Not all mobiles should have this ability, so create an attribute to toggle it on or off. When a mobile enters a room with an object, give a percentage change that the mobile will pick the object up instead of moving. When the mobile has an object in its inventory, there is also a possibility that it may drop the object instead of moving. Mobiles can carry multiple objects. Make sure carried objects are displayed when the user looks at the mobile. ("Marvin, the paranoid android, is made of dull gray metal. When he speaks, his voice just drones on and on..... Marvin is carrying: a small locket, a thin dagger made of ice.") The user should also be alerted when a mobile picks up or drops an object (assume they're in the same room) ("Marvin, the paranoid android, a small locket." "Marvin, the paranoid android, drops a this dagger made of ice."). Note that if you have implemented locked down objects (above), other messages will be needed. ("Marvin, the paranoid android, strains himself trying to pick up the piano.") 
 
-```[tasklist]
+[tasklist]
 ### My tasks
 - [ ] https://github.com/octo-org/octo-repo/issues/45
 - [ ] Draft task
-```
+
