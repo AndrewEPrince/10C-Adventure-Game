@@ -31,33 +31,33 @@ Also notice that this class makes use of a private method. This method is only u
 ## The Programming Project
 Using the room class, create a tool that will allow the user to build and connect rooms. The user can traverse the rooms, create new rooms, modify room descriptions, and connect existing rooms. The user has access to the following commands: 
 ```
-╔═══════════════╦═══════════════════════════════════════════════════════╗
-║ `Command`     ║   `Function`                                          ║
-╠═══════════════╬═══════════════════════════════════════════════════════╣
-║ n or north    ╬   move north                                          ║
-╠═══════════════╬═══════════════════════════════════════════════════════╣
-║ s or south    ║ 	move south                                          ║
-╠═══════════════╬═══════════════════════════════════════════════════════╣
-║ e or east     ║ 	move east                                           ║
-╠═══════════════╬═══════════════════════════════════════════════════════╣
-║ w or west     ║   move west                                           ║
-╠═══════════════╬═══════════════════════════════════════════════════════╣
-║ l or look     ║ 	show room description                               ║
-╠═══════════════╬═══════════════════════════════════════════════════════╣
-║ x or exits    ║ 	list exits from current room                        ║
-╠═══════════════╬═══════════════════════════════════════════════════════╣
-║ c or connect  ║ 	connect this room to another (already existing) room║
-╠═══════════════╬═══════════════════════════════════════════════════════╣
-║ r or rename   ║   rename the current room                             ║
-╠═══════════════╬═══════════════════════════════════════════════════════╣
-║ d or desc     ║ 	change the description of the current room          ║
-╠═══════════════╬═══════════════════════════════════════════════════════╣
-║ a or add      ║ 	add a new room to the game                          ║
-╠═══════════════╬═══════════════════════════════════════════════════════╣
-║ q or quit     ║ 	quit the roombuilder tool                           ║
-╠═══════════════╬═══════════════════════════════════════════════════════╣
-║ ?             ║ 	show a help menu                                    ║
-╚═══════════════╩═══════════════════════════════════════════════════════╝
+╔═══════════════╦════════════════════════════════════════════════════════╗
+║ Command       ║   `Function`                                           ║
+╠═══════════════╬════════════════════════════════════════════════════════╣
+║ n or north    ╬   move north                                           ║
+╠═══════════════╬════════════════════════════════════════════════════════╣
+║ s or south    ║ 	move south                                           ║
+╠═══════════════╬════════════════════════════════════════════════════════╣
+║ e or east     ║ 	move east                                            ║
+╠═══════════════╬════════════════════════════════════════════════════════╣
+║ w or west     ║   move west                                            ║
+╠═══════════════╬════════════════════════════════════════════════════════╣
+║ l or look     ║ 	show room description                                ║
+╠═══════════════╬════════════════════════════════════════════════════════╣
+║ x or exits    ║ 	list exits from current room                         ║
+╠═══════════════╬════════════════════════════════════════════════════════╣
+║ c or connect  ║ 	connect this room to another (already existing) room ║
+╠═══════════════╬════════════════════════════════════════════════════════╣
+║ r or rename   ║   rename the current room                              ║
+╠═══════════════╬════════════════════════════════════════════════════════╣
+║ d or desc     ║ 	change the description of the current room           ║
+╠═══════════════╬════════════════════════════════════════════════════════╣
+║ a or add      ║ 	add a new room to the game                           ║
+╠═══════════════╬════════════════════════════════════════════════════════╣
+║ q or quit     ║ 	quit the roombuilder tool                            ║
+╠═══════════════╬════════════════════════════════════════════════════════╣
+║ ?             ║ 	show a help menu                                     ║
+╚═══════════════╩════════════════════════════════════════════════════════╝
 ```
 
 A sample executable file can be found [here](http://tomrebold.com/csis10c/CUR/finalProject/Cavern.exe.docx).
