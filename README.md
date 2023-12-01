@@ -36,27 +36,27 @@ Using the room class, create a tool that will allow the user to build and connec
 ╠═══════════════╬════════════════════════════════════════════════════════╣
 ║ n or north    ╬   move north                                           ║
 ╠═══════════════╬════════════════════════════════════════════════════════╣
-║ s or south    ║ 	move south                                           ║
+║ s or south    ║   move south                                           ║
 ╠═══════════════╬════════════════════════════════════════════════════════╣
-║ e or east     ║ 	move east                                            ║
+║ e or east     ║   move east                                            ║
 ╠═══════════════╬════════════════════════════════════════════════════════╣
 ║ w or west     ║   move west                                            ║
 ╠═══════════════╬════════════════════════════════════════════════════════╣
-║ l or look     ║ 	show room description                                ║
+║ l or look     ║   show room description                                ║
 ╠═══════════════╬════════════════════════════════════════════════════════╣
-║ x or exits    ║ 	list exits from current room                         ║
+║ x or exits    ║   list exits from current room                         ║
 ╠═══════════════╬════════════════════════════════════════════════════════╣
-║ c or connect  ║ 	connect this room to another (already existing) room ║
+║ c or connect  ║   connect this room to another (already existing) room ║
 ╠═══════════════╬════════════════════════════════════════════════════════╣
 ║ r or rename   ║   rename the current room                              ║
 ╠═══════════════╬════════════════════════════════════════════════════════╣
-║ d or desc     ║ 	change the description of the current room           ║
+║ d or desc     ║   change the description of the current room           ║
 ╠═══════════════╬════════════════════════════════════════════════════════╣
-║ a or add      ║ 	add a new room to the game                           ║
+║ a or add      ║   add a new room to the game                           ║
 ╠═══════════════╬════════════════════════════════════════════════════════╣
-║ q or quit     ║ 	quit the roombuilder tool                            ║
+║ q or quit     ║   quit the roombuilder tool                            ║
 ╠═══════════════╬════════════════════════════════════════════════════════╣
-║ ?             ║ 	show a help menu                                     ║
+║ ?             ║   show a help menu                                     ║
 ╚═══════════════╩════════════════════════════════════════════════════════╝
 ```
 
