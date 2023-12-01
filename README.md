@@ -8,6 +8,8 @@ In the text based adventure game, the player moves from room to room reading des
 
 You assignment is to design a tool that will allow the user to create and connect rooms for a text based adventure game. **You do not have to design an actual game!** Many of the features in the above example will not be implemented in your program (see extra credit).
 
+
+
 ## The Room Class
 For this assignment we have provided a Room class that will allow you to build rooms for your adventure game world constructor. You can find the class in the following files: [Room.h](http://tomrebold.com/csis10c/CUR/finalProject/Room.h) and [Room.cp](http://tomrebold.com/csis10c/CUR/finalProject/Room.cpp). You are not allowed to modify this class while working on your program. You should however study the implementation to familiarize yourself with it. 
 
@@ -28,9 +30,11 @@ By exploiting these features, it's possible for the game designer to create maze
 
 Also notice that this class makes use of a private method. This method is only used as support methods for the destructor of the class, thus not made available in public. It searches all the exits of any room connected to this room, and removes those exits, preventing players from attempting to "enter" a room that no longer exists. 
 
+
+
 ## The Programming Project
 Using the room class, create a tool that will allow the user to build and connect rooms. The user can traverse the rooms, create new rooms, modify room descriptions, and connect existing rooms. The user has access to the following commands: 
-```diff
+```
 ╔═══════════════╦════════════════════════════════════════════════════════╗
 ║ Command       ║   Function                                             ║
 ╠═══════════════╬════════════════════════════════════════════════════════╣
@@ -67,6 +71,8 @@ All commands should be robust. That is, your program should perform a great deal
 - When connecting two rooms, the user cannot break existing connections (this might cause another room to be leaked). This means the user cannot make a connection or add a new room while in a room with four connected exits. 
 
 Students are encouraged to run each other's code and offer feedback on the interface. 
+
+
 
 ## 2. Extra Credit for the Programming Assignment
 <ins>**Note:**</ins> extra credit options with more in them (e.g. **5 more points**)  are dependent upon the completion of other portions of extra credit first. 
