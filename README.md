@@ -69,7 +69,7 @@ All commands should be robust. That is, your program should perform a great deal
 Students are encouraged to run each other's code and offer feedback on the interface. 
 
 ## 2. Extra Credit for the Programming Assignment
-<ins>**Note**<\ins> extra credit options with more in them (e.g. **5 more points**)  are dependent upon the completion of other portions of extra credit first. 
+<ins>**Note**</ins> extra credit options with more in them (e.g. **5 more points**)  are dependent upon the completion of other portions of extra credit first. 
 
 (**5 points**) Implement a "jump" command. This allows the user to jump from one room to another, even if they're not connected. (This will save developer time by not needing to traverse all the rooms between here and there). 
 
