@@ -1,6 +1,9 @@
 # Final Project - Adventure Game Builder
 This project is worth 10% of your grade! 
 
+[Tasks]
+- [ ] Do Something
+
 ## 1. Background
 In the early days of computing, before windows and graphic user interfaces, text based adventure games (such as the original Zork) were popular. Multi-user Internet variations of these games are still popular today. 
 
