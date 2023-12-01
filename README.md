@@ -30,9 +30,9 @@ Also notice that this class makes use of a private method. This method is only u
 
 ## The Programming Project
 Using the room class, create a tool that will allow the user to build and connect rooms. The user can traverse the rooms, create new rooms, modify room descriptions, and connect existing rooms. The user has access to the following commands: 
-```
+```diff
 ╔═══════════════╦════════════════════════════════════════════════════════╗
-║  <font color="green">Command</font>       ║   Function                                             ║
+║ - Command       ║   Function                                             ║
 ╠═══════════════╬════════════════════════════════════════════════════════╣
 ║ n or north    ╬   move north                                           ║
 ╠═══════════════╬════════════════════════════════════════════════════════╣
