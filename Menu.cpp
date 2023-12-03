@@ -1,8 +1,8 @@
-#include "Menu.h";
-#include <iostream>;
-#include <string>;
+#include "Menu.h"
+#include <iostream>
+#include <string>
 using namespace std;
-
+char getSelection(string selection);
 #pragma region constructors and destructors
 Menu::Menu()
 {
@@ -12,6 +12,7 @@ Menu::Menu()
 Menu::~Menu()
 {
 }
+
 #pragma endregion
 
 #pragma region Main Menu
