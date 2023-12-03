@@ -71,21 +71,17 @@ MENU
 class Menu
 {
 private:
+
     void printMainM();
 
     void CreateMenuMain(); // main create menu
-    void printCreateMenuMain();
+    void printCreateMenuMain(); // Print the create menu
     
     void CreateMenu(); // create menu for if you alrady have a map
     void printCreateM(); // print create menu for if you alrady have a map
 
-
-
-
-    void CreateHelp();
-    void printCreateHelpM();
-    
-    
+    void CreateHelp(); // create help menu
+    void printCreateHelpM(); // print create help menu
     
 public:
     Menu(/* args */);
