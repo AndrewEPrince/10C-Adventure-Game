@@ -1,4 +1,4 @@
-// Room.cpp: implementation of the Room class.
+ // Room.cpp: implementation of the Room class.
 //
 //////////////////////////////////////////////////////////////////////
 
