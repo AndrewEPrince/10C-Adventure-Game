@@ -5,7 +5,20 @@
 
 #include "Room.h"
 
+/*
+GitHub Copilot: To fill out the `Room.cpp` file, you'll need to implement the methods declared in the `Room` class. Here's a basic outline of what you might do:
 
+TODO: 1. Implement the constructors. The default constructor can initialize the name and description to empty strings, and the exits to `nullptr`. The parameterized constructor can take a name and a description and initialize the corresponding member variables.
+
+TODO: 2. Implement the `name()` and `description()` methods to return the name and description of the room.
+
+TODO: 3. Implement the `set_name()` and `set_description()` methods to set the name and description of the room.
+
+TODO: 4. Implement the `north()`, `south()`, `east()`, and `west()` methods to return the room in the corresponding direction.
+
+TODO: 5. Implement the `connect()` method to connect two rooms together. This method should set the exit in the specified direction to the given room, and also set the exit in the opposite direction of the other room to this room.
+
+*/
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
@@ -106,13 +119,19 @@ void Room::disconnect(Direction d)
 	// disconnects ALL exits from another
 	// room to this one.  It's sloppy, but
 	// that's OK.
-	Room * other_room;
-	other_room = exits_[d];
-	int i;
-	for(i = 0; i < 4; i++)	{
-		if (other_room->exits_[i] == this)
-			other_room->exits_[i] = NULL;
-	}
+	if (exits_[d] == NULL) {
+        return;
+    }
+
+    Room * other_room = exits_[d];
+
+    for(int i = 0; i < 4; i++) {
+        if (other_room->exits_[i] == this) {
+            other_room->exits_[i] = NULL;
+        }
+    }
+
+    exits_[d] = NULL;
 }
 
 // --- operators ---
