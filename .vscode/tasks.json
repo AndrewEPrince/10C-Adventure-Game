@@ -7,7 +7,7 @@
             "command": "g++",
             "args": [
                 "-g",
-                "${workspaceFolder}/*.cpp",
+                "$(find ${workspaceFolder} -name '*.cpp')",
                 "-o",
                 "${workspaceFolder}/main"
             ],

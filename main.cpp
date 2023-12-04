@@ -2,13 +2,11 @@
 
 #include "Menu.h"
 
-using namespace std;
 
 int main(void)
 {
-    //Menu menu;
-    //menu.load();
+    Menu menu;
+    menu.load();
 
-    cout << "Hello World" << endl;;
-    return 0;
+    //cout << "Hello World" << endl;;
 }
