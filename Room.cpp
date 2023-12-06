@@ -101,14 +101,14 @@ void Room::set_description(string d)
 }
 
 // --- facilitators ---
-bool Room::connect(Direction exit, Room *r, Direction to)
+bool Room::connect(Direction exit, Room *r, Direction otherExit)
 {
 	// check that both exits are free
-	if (exits_[exit] != NULL or r->exits_[to] != NULL)
+	if (exits_[exit] != NULL or r->exits_[otherExit] != NULL)
 		return false;
 	// make connection
-	exits_[exit] = r;
-	r->exits_[to] = this;
+	this->exits_[exit] = r;
+	r->exits_[otherExit] = this;
 	return true;
 }
 
