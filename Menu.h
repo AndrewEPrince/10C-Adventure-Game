@@ -74,10 +74,10 @@ private:
 
     void printMainM();
 
-    void CreateMenuMain(); // main create menu
+    void CreateMenuMain(); // main create menu 
     void printCreateMenuMain(); // Print the create menu
     
-    void CreateMenu(); // create menu for if you alrady have a map
+    void CreateMenu(bool newGame); // create menu for if you alrady have a map takes in if new game or not
     void printCreateM(); // print create menu for if you alrady have a map
 
     void CreateHelp(); // create help menu

@@ -1,7 +1,0 @@
-*Room1
-name
-description
-North room
-South Room
-East Room
-West Room
