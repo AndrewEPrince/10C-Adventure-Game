@@ -1,7 +1,0 @@
-The Void:nothin bot cool vibes
-andrew:nothin bot cool vibes
-tehya:cool vibes all arround
-end
-The Void[north]tehya[error]
-tehya[south]andrew[north]
-end

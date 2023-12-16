@@ -21,7 +21,7 @@ map<string, Room*> loadMap();
 string findOtherExit(string name, Room* room);
 
 
-
+// default constructor and destructor
 #pragma region constructors and destructors
 Menu::Menu()
 {
@@ -35,6 +35,7 @@ Menu::~Menu()
 #pragma endregion
 
 #pragma region Main Menu
+// Main Menu
 void Menu::printMainM()
 {
     cout << "Main Menu" << endl;
@@ -44,9 +45,11 @@ void Menu::printMainM()
     cout << "Enter your selection using the selection's number:" << endl;
 }
 
+// Main Menu
 void Menu::load()
 {
     int selection;
+    // while loop to get input from the user
     while (true)
     {
         printMainM();
@@ -71,6 +74,7 @@ void Menu::load()
 #pragma endregion
 
 #pragma region Create Menu Main
+// Create Menu Main
 void Menu::printCreateMenuMain()
 {
     cout << "Create Help Menu" << endl;
@@ -83,6 +87,7 @@ void Menu::printCreateMenuMain()
 void Menu::CreateMenuMain()
 {
     int selection;
+    // while loop to get input from the user
     while (true)
     {
         printCreateMenuMain();
@@ -93,11 +98,12 @@ void Menu::CreateMenuMain()
         switch (selection)
         {
         case 1:
-            // Start a new Map
-            //TODO: Create a new map obj
+
+            // if the user wants to start a new Map
             CreateMenu(false);
             break;
         case 2:
+            // if the user wants to load a map
             CreateMenu(true);
             break;
         case 3:
@@ -171,18 +177,13 @@ void Menu::printCreateM()
     cout << "╠═══════════════╬════════════════════════════════════════════════════════╣" << endl;
     cout << "║ q or quit     ║   save and quit the map creator tool                   ║" << endl;
     cout << "╠═══════════════╬════════════════════════════════════════════════════════╣" << endl;
-    cout << "║ ?             ║   show a help menu                                     ║" << endl;
+    cout << "║ ?             ║   reprint the menu                                     ║" << endl;
     cout << "╚═══════════════╩════════════════════════════════════════════════════════╝" << endl;
     
 }
 
 void Menu::CreateMenu(bool ifloadgame)
 {
-    //TODO: Make a Map obj based on if the user wants to load or create a new map
-        //TODO: if we load the onject then we need to load the Object
-        //TODO: if we create a new map then we need to create a new object
-    
-    //TODO: 
     string selectionString;
     char selection;
     Room* currentRoom;
@@ -197,13 +198,14 @@ void Menu::CreateMenu(bool ifloadgame)
     } 
     else
     {
+        //  Create a new room if we arent making a new map
         currentRoom = new Room("The Void", "You are in the void");
         rooms["The Void"] = currentRoom;
     }
     
     while (true)
     {
-
+        // Print the menu
         printCreateM();
         cout << "Current Room: " << currentRoom->name() << endl;
         cout << "═════════════════════════════" << endl;
@@ -212,20 +214,23 @@ void Menu::CreateMenu(bool ifloadgame)
         getline(cin, selectionString);
         cout << endl;
         
-        selection = getSelection(selectionString); // Turns from selection string into a char for the switch statement
+        // Turns from selection string into a char for the switch statement
+        selection = getSelection(selectionString); 
         
-
+        // Switch statement for the menu choices
         switch (selection)
         {
         case 'n':
             // move north
             if (currentRoom->north() == nullptr)
             {
+                // if there is no room to the north
                 cout << "There is no room to the north." << endl;
                 pressEnter();
             }
             else
             {
+                // if there is a room to the north
                 currentRoom = currentRoom->north();
                 cout << "You are now in the " << currentRoom->name() << endl;
                 pressEnter();
@@ -236,11 +241,13 @@ void Menu::CreateMenu(bool ifloadgame)
             // move south
             if (currentRoom->south() == nullptr)
             {
+                // if there is no room to the south
                 cout << "There is no room to the south." << endl;
                 pressEnter();
             }
             else
             {
+                // if there is a room to the south
                 currentRoom = currentRoom->south();
                 cout << "You are now in the " << currentRoom->name() << endl;
                 pressEnter();
@@ -251,11 +258,13 @@ void Menu::CreateMenu(bool ifloadgame)
             // move east
             if (currentRoom->east() == nullptr)
             {
+                // if there is no room to the east
                 cout << "There is no room to the east." << endl;
                 pressEnter();
             }
             else
             {
+                // if there is a room to the east
                 currentRoom = currentRoom->east();
                 cout << "You are now in the " << currentRoom->name() << endl;
                 pressEnter();
@@ -266,11 +275,13 @@ void Menu::CreateMenu(bool ifloadgame)
             // move west
             if (currentRoom->west() == nullptr)
             {
+                // if there is no room to the west
                 cout << "There is no room to the west." << endl;
                 pressEnter();
             }
             else
             {
+                // if there is a room to the west
                 currentRoom = currentRoom->west();
                 cout << "You are now in the " << currentRoom->name() << endl;
                 pressEnter();
@@ -323,12 +334,14 @@ void Menu::CreateMenu(bool ifloadgame)
 
         case 'q':
             // save in the JSON and quit the map creator tool
+            
             saveMap(rooms);
             return;
             break;
 
         case '?':
-            // show a help menu
+            // reprints the menu
+            printCreateM();
             break;
 
         default:
@@ -339,21 +352,10 @@ void Menu::CreateMenu(bool ifloadgame)
 
 #pragma endregion
 
-#pragma region Create Help
-void Menu::printCreateHelpM()
-{
-    cout << "Create Help Menu" << endl;
-    cout << "1. Create Room" << endl;
-    cout << "2. Create Item" << endl;
-    cout << "3. Create Creature" << endl;
-    cout << "4. Create Exit" << endl;
-    cout << "5. Go to Room" << endl;
-    cout << "6. Save" << endl;
-    cout << "Enter your selection using the selection's number:" << endl;
-}
-#pragma endregion
+
 
 #pragma region local functions
+// Function to turn the selection string into a char for the switch statement
 char getSelection(string selection)
 {
     if (selection == "n" || selection == "north")
@@ -416,23 +418,35 @@ char getSelection(string selection)
     }
 }
 
+// Function to add a new room to the map of rooms
 void addRoom(map<string, Room*>& rooms)
 {
+    // Declare variables to hold the room name and description
     string roomName;
     string roomDesc;
+
+    // Create a new Room object on the heap
     Room* newRoom = new Room();
+
+    // Prompt the user to enter the room name
     cout << "Enter the name of the room." << endl;
-    
     getline(cin, roomName);
+
+    // Set the name of the new Room object
     newRoom->set_name(roomName);
-    cout << "Enter the description of the room." << endl;
     
+    // Read the room description from the user
+    cout << "Enter the description of the room." << endl;
     getline(cin, roomDesc);
+
+    // Set the description of the new Room object
     newRoom->set_description(roomDesc);
+
+    // Add the new Room object to the map, using the room name as the key
     rooms[roomName] = newRoom;
 
+    // Print a confirmation message
     cout << "Room added." << endl;
-
 }
 
 void jumpToRoom(map<string, Room*>& rooms, Room &currRoom)
@@ -452,6 +466,7 @@ void jumpToRoom(map<string, Room*>& rooms, Room &currRoom)
     }
 }
 
+// Function to change the description of the current room
 void changeDec(Room &currRoom)
 {
     string newDesc;
@@ -462,6 +477,7 @@ void changeDec(Room &currRoom)
     cout << "Description changed." << endl;
 }
 
+// Function to rename the current room
 void rename(Room &currRoom)
 {
     string newName;
@@ -472,33 +488,40 @@ void rename(Room &currRoom)
     cout << "Name changed." << endl;
 }
 
+// Function to connect the current room to another room
 void connectRooms(map<string, Room*>& rooms, Room& currRoom)
 {
+    // Prompt the user to enter the name of the room to connect to
     string roomName;
     cout << "Enter the name of the room you want to connect to: " << endl;
-    
     getline(cin, roomName);
+
+    // Check if the room exists
     if (rooms.find(roomName) == rooms.end())
     {
         cout << "Room not found." << endl;
-    }
+    } 
     else if (currRoom.name() == "The Void")
     {
         cout << "You cant connect a room with \"The Void\"." << endl;
     }
-    else
+    else // if the room exists
     {
+        // Prompt the user to enter the direction to connect the rooms
         string doorPick1;
         string doorPick2;
         
+        // Prompt the user to enter the direction to connect the rooms
         cout << "In the current room, What door do you want to connect the new room to?" << endl;
         printEmptyExits(currRoom);
         getline(cin, doorPick1);
 
+        // Prompt the user to enter the direction to connect the rooms
         cout << "In the new room, What door do you want to connect the current room to?" << endl;
         printEmptyExits(*rooms[roomName]);
         getline(cin, doorPick2);
         
+        // Connect the rooms
         currRoom.connect(getDoorPick(doorPick1), rooms[roomName], getDoorPick(doorPick2));
         cout << "Connected to room: " << roomName << endl;
     }
@@ -506,6 +529,7 @@ void connectRooms(map<string, Room*>& rooms, Room& currRoom)
 
 void printEmptyExits(Room currRoom)
 {
+    // Print the available exits
     cout << "Avalible Exits to Choose: " << endl;
     if (currRoom.north() == nullptr)
     {
@@ -526,20 +550,24 @@ void printEmptyExits(Room currRoom)
     cout << "════════════════════════════════════════════════════════════════════════" << endl;
 }
 
+// Function to print the exits of the current room
 void printExits(Room currRoom)
 {
+    // Print the available exits
     bool found = false;
     cout << "Exits in Room: " << endl;
+
+    // Print the available exits
     if (currRoom.north() != nullptr)
     {
         cout << " - north [" << currRoom.north()->name() << "]" << endl;
         found = true;
-    }
+    } 
     if (currRoom.south() != nullptr)
     {
         cout << " - south [" << currRoom.south()->name() << "]" << endl;
         found = true;
-    }
+    } 
     if (currRoom.east() != nullptr)
     {
         cout << " - east [" << currRoom.east()->name() << "]" << endl;
@@ -550,7 +578,7 @@ void printExits(Room currRoom)
         cout << " - west [" << currRoom.west()->name() << "]" << endl;
         found = true;
     }
-    if (!found)
+    if (!found) // if there are no exits
     {
         cout << "No exits found." << endl;
     }
@@ -559,7 +587,7 @@ void printExits(Room currRoom)
 
 Direction getDoorPick(string doorPick)
 {
-    
+    // Prompt the user to enter the direction to connect the rooms
     while (doorPick != "n" && doorPick != "north" && doorPick != "s" && doorPick != "south" && doorPick != "e" && doorPick != "east" && doorPick != "w" && doorPick != "west")
     {
         cout << "Please Choose a Valid Selection (\"n\", \"s\", \"e\", \"w\")" << endl << "Try Again:" << endl;
@@ -567,6 +595,7 @@ Direction getDoorPick(string doorPick)
         cout << "your pick was "<< doorPick << endl;
     }
     
+    // Connect the rooms
     if (doorPick == "n" || doorPick == "north")
     {
         return NORTH;
@@ -583,8 +612,10 @@ Direction getDoorPick(string doorPick)
     {
         return WEST;
     }
+    else return NORTH;
 }
 
+// Function to pause the program until the user presses enter
 void pressEnter()
 {
     while(true)
@@ -595,14 +626,29 @@ void pressEnter()
     }
 }
 
+
+// Function to save the map to a file
 void saveMap(map<string, Room*> rooms)
-{
-    cout << "what would you like to name the map?" << endl;
+{   
+    // Prompt the user to save the map
+    cout << "Would you like to save the map? (y/n)" << endl;
+    string save;
+    getline(cin, save);
+    if (save == "n")
+    {
+        return;
+    }
+    
+    // Prompt the user for the map name
+    cout << "What would you like to name the map?" << endl;
     string mapName;
     getline(cin, mapName);
     string fileName = mapName + ".txt";
 
+    // Open the file for writing
     ofstream file(fileName);
+    
+    // Write room names and descriptions to the file
     vector<string> roomNames;
     for (pair<string, Room*> pair : rooms) 
     {
@@ -616,6 +662,7 @@ void saveMap(map<string, Room*> rooms)
 
     file << "end" << endl;
 
+    // Write room connections to the file
     for (int i = 0; i < roomNames.size(); i++)
     {
         if (rooms[roomNames[i]]->north() != nullptr)
@@ -638,11 +685,14 @@ void saveMap(map<string, Room*> rooms)
     }
     file << "end" << endl;
 
+    // Close the file
     file.close();
 
+    // Print a success message
     cout << "Map Saved as " << mapName << endl;
 }
 
+// Function to find the direction of the exit from a given room
 string findOtherExit(string name, Room* room)
 {
     if (room->north() != nullptr && room->north()->name() == name)
@@ -667,11 +717,15 @@ string findOtherExit(string name, Room* room)
     }
 }
 
+// Function to load a map from a file
 map<string, Room*> loadMap()
 {
+    // Prompt the user for the map name
     cout << "What map would you like to load?" << endl;
     string mapName;
     getline(cin, mapName);
+
+    // Open the file for reading
     string fileName = mapName + ".txt";
     ifstream file(fileName);
     string line;
@@ -680,10 +734,11 @@ map<string, Room*> loadMap()
     // Load Function for the Rooms
     while (getline(file, line))
     {
+        // Check if the end of the rooms section has been reached
         if (line == "end")
         {
             break;
-        }
+        } // If not, load the room
         else
         {
             string roomName = line.substr(0, line.find(":"));
@@ -700,13 +755,17 @@ map<string, Room*> loadMap()
         {
             break;
         }
-        else
+        else // if not, load the connections
         {
+            // Get the room name and door direction of the 1st room
             string roomName = line.substr(0, line.find("["));
             string door = line.substr(line.find("[") + 1, line.find("]") - line.find("[") - 1);
+
+            // Get the room name and door direction of the other room
             string roomName2 = line.substr(line.find("]") + 1, line.find("[", line.find("]") + 1) - line.find("]") - 1);
             string door2 = line.substr(line.find("[", line.find("]") + 1) + 1, line.find("]", line.find("]") + 1) - line.find("[", line.find("]") + 1) - 1);
             
+            // Convert the door directions to Direction enums
             Direction doorDire1;
             Direction doorDire2;
             if (door == "north")
@@ -729,6 +788,8 @@ map<string, Room*> loadMap()
             {
                 cout << "Error in loading map" << endl;
             }
+
+            // Convert the door directions to Direction enums
             if (door2 == "north")
             {
                 doorDire2 = NORTH;
@@ -750,6 +811,7 @@ map<string, Room*> loadMap()
                 cout << "Error in loading " << roomName << endl;
             }
             
+            // Connect the rooms
             rooms[roomName]->connect(doorDire1, rooms[roomName2], doorDire2);
         }
     }

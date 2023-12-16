@@ -1,0 +1,9 @@
+andrew:andrews room
+andy:andy's room
+caleb:toms room
+end
+andy[south]tom[north]
+andy[east]andrew[west]
+caleb[north]andy[error]
+caleb[south]andrew[error]
+end

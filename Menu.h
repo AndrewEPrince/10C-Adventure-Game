@@ -88,6 +88,4 @@ public:
     ~Menu();
 
     void load();
-    
-
 };
